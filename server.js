@@ -12,7 +12,7 @@ let image = require("./routes/image");
 const app = express();
 
 const MONGODB_URI =
-  process.env.MONGODB_URI || config.MONGODB_URI[app.settings.env];
+  process.env.MONGODB_URI || config.mongoURI[app.settings.env];
 mongoose.connect(
   MONGODB_URI,
   { useNewUrlParser: true, useUnifiedTopology: true },
