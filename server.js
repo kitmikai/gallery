@@ -42,7 +42,7 @@ db.once("open", () => {
 app.set("view engine", "ejs");
 
 // Set up the public folder;
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "./public")));
 
 // body parser middleware
 app.use(express.json());
@@ -51,6 +51,6 @@ app.use("/", index);
 app.use("/image", image);
 
 const port = process.env.PORT;
-app.listen(PORT, () => {
-  console.log(`Server is listening at http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is listening at http://localhost:${port}`);
 });
