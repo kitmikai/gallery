@@ -21,7 +21,7 @@ let image = require("./routes/image");
 const mongodb_url =
   process.env.MONGODB_URI || config.MONGODB_URI[app.settings.env];
 mongoose.connect(
-  mongodb_url,
+  MONGODB_URI,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (err) {
