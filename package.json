@@ -1,13 +1,13 @@
 {
   "name": "dark-room",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gallery Web App Jenkins Deployment Project",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Timothy Matara",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
