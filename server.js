@@ -18,7 +18,7 @@ let image = require("./routes/image");
 //     if (err) console.log(err)
 // });
 
-const mongodb_url =
+const MONGODB_URI =
   process.env.MONGODB_URI || config.MONGODB_URI[app.settings.env];
 mongoose.connect(
   MONGODB_URI,
