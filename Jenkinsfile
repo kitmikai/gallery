@@ -1,7 +1,5 @@
 pipeline {
     agent any
-<<<<<<< HEAD
-=======
     environment {
         EMAIL_BODY =
             """
@@ -17,7 +15,6 @@ pipeline {
         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \`${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_RECEPIENT = 'matara.timothy@gmail.com'
     }
->>>>>>> test
     tools {
         nodejs 'NodeJS-4'
     }
@@ -40,8 +37,6 @@ pipeline {
             }
         }
     }
-<<<<<<< HEAD
-=======
     post {
         success {
             emailext attachLog: true, 
@@ -55,5 +50,4 @@ pipeline {
                 subject: EMAIL_SUBJECT_FAILURE, 
                 to: EMAIL_RECEPIENT
         }
->>>>>>> test
 }
