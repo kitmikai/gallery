@@ -3,7 +3,7 @@ pipeline {
     environment {
         EMAIL_BODY =
             """
-                <p>EXECUTED: Job <strong>\'${env.JOB_NAME}:${env.BUILD_NUMBER})\'</strong></p>
+                <p>EXECUTED: Job <strong>\'${env.JOB_NAME}:${env.BUILD_NUMBER}\'</strong></p>
                 <p>
                 View console output at 
                 "<a href="${env.BUILD_URL}">${env.JOB_NAME}:${env.BUILD_NUMBER}</a>"
