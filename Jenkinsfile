@@ -11,8 +11,8 @@ pipeline {
                 <p><em>(Build log is attached.)</em></p>
 
             """
-        EMAIL_SUBJECT_SUCCESS = "Status: 'SUCCESS' -Job \`${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
-        EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \`${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
+        EMAIL_SUBJECT_SUCCESS = "Status: 'SUCCESS' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
+        EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
         EMAIL_RECEPIENT = 'matara.timothy@gmail.com'
     }
     tools {
