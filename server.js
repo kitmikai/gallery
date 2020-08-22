@@ -27,20 +27,6 @@ mongoose.connect(
   }
 );
 
-const MONGODB_URI =
-  process.env.MONGODB_URI || config.mongoURI[app.settings.env];
-mongoose.connect(
-  MONGODB_URI,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(`Connected to database: ${MONGODB_URI}`);
-    }
-  }
-);
-
 // View Engine
 app.set("view engine", "ejs");
 

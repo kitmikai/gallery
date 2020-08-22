@@ -10,7 +10,3 @@ config.mongoURI = {
     "mongodb+srv://photoman:alc-at3-P1x@cluster0.lltah.mongodb.net/darkroom-test?retryWrites=true&w=majority",
 };
 module.exports = config;
-<<<<<<< HEAD
-=======
-module.exports = config;
->>>>>>> test
