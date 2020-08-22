@@ -37,7 +37,7 @@ app.use(express.json());
 app.use("/", index);
 app.use("/image", image);
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+//const port = process.env.PORT || 5000;
+app.listen(process.env.PORT || 5000, function () {
+  console.log("Server is listening at http://localhost:5000");
 });
