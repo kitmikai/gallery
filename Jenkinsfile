@@ -33,7 +33,7 @@ pipeline {
                 failure {
                     emailext attachLog: true,
                     body: EMAIL_BODY,
-                    subject: EMAIL_SUBJECT_TEST_FAILURE
+                    subject: EMAIL_SUBJECT_TEST_FAILURE,
                     to: EMAIL_RECEPIENT
                 }
             }
