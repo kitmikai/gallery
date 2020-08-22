@@ -29,13 +29,13 @@ pipeline {
             steps{
                 sh 'npm test'
             }
-        }
-        post {
-            failure {
-                emailext attachLog: true,
-                body: EMAIL_BODY,
-                subject: EMAIL_SUBJECT_TEST_FAILURE
-                to: EMAIL_RECEPIENT
+            post {
+                failure {
+                    emailext attachLog: true,
+                    body: EMAIL_BODY,
+                    subject: EMAIL_SUBJECT_TEST_FAILURE
+                    to: EMAIL_RECEPIENT
+                }
             }
         }
         stage('Build') {
