@@ -31,7 +31,7 @@ mongoose.connect(
 app.set("view engine", "ejs");
 
 // Set up the public folder;
-app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // body parser middleware
 app.use(express.json());
@@ -43,3 +43,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is listening at http://localhost:${PORT}`);
 });
+
+module.exports = app;
