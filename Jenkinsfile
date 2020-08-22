@@ -13,6 +13,7 @@ pipeline {
             """
         EMAIL_SUBJECT_SUCCESS = "Status: 'SUCCESS' -Job \`${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \`${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
+        EMAIL_SUBJECT_TEST_FAILURE = "Status: 'TEST FAILURE' -Job \`${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_RECEPIENT = 'matara.timothy@gmail.com'
     }
     tools {
@@ -22,6 +23,19 @@ pipeline {
         stage('Clone repo') {
             steps {
                 git 'https://github.com/kitmikai/gallery'
+            }
+        }
+        stage('Test Build'){
+            steps{
+                sh 'npm test'
+            }
+        }
+        post {
+            failure {
+                emailext attachLog: true,
+                body: EMAIL_BODY,
+                subject: EMAIL_SUBJECT_TEST_FAILURE
+                to: EMAIL_RECEPIENT
             }
         }
         stage('Build') {
@@ -40,14 +54,15 @@ pipeline {
     post {
         success {
             emailext attachLog: true, 
-                body: EMAIL_BODY,
-                subject: EMAIL_SUBJECT_SUCCESS, 
-                to: EMAIL_RECEPIENT
+            body: EMAIL_BODY,
+            subject: EMAIL_SUBJECT_SUCCESS, 
+            to: EMAIL_RECEPIENT
         }
         failure {
             emailext attachLog: true, 
-                body: EMAIL_BODY,
-                subject: EMAIL_SUBJECT_FAILURE, 
-                to: EMAIL_RECEPIENT
+            body: EMAIL_BODY,
+            subject: EMAIL_SUBJECT_FAILURE, 
+            to: EMAIL_RECEPIENT
         }
+    }
 }
