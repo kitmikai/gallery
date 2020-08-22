@@ -5,8 +5,6 @@ let upload = require("./upload");
 const url = require("url");
 let Image = require("../models/images");
 
-var db = [];
-
 router.get("/", (req, res) => {
   Image.find({}, function (err, images) {
     // console.log(images)
