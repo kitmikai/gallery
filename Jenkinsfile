@@ -15,6 +15,7 @@ pipeline {
         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_SUBJECT_TEST_FAILURE = "Status: 'TEST FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_RECEPIENT = 'matara.timothy@gmail.com'
+        APP_URL = 'https://dry-springs-42834.herokuapp.com/'
     }
     tools {
         nodejs 'NodeJS-4'
@@ -51,7 +52,7 @@ pipeline {
             }
             post {
                 success {
-                    slackSend message: "Deployment successful :parrot: \n'${env.JOB_NAME}:${env.BUILD_NUMBER}\' Site: https://dry-springs-42834.herokuapp.com/"
+                    slackSend message: "Build '${env.JOB_NAME}:${env.BUILD_NUMBER}\' successfully deployed to Heroku '${env.APP_URL}' :beer:"
                 }
             }
         }
