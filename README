@@ -1,0 +1,31 @@
+# Dark Room Gallery App
+A NodeJS web application that allows users to upload photos to the cloud, and display them on the browser. This project tests DevOps skills in Jenkins to deploy code using a pipeline. Notifications are sent to Slack and Email to the team when builds are successful or failed.
+
+## Demo
+The app has been published on Heroku(https://dry-springs-42834.herokuapp.com/)
+
+## Installation
+* Fork and Clone this repo https://github.com/kitmikai/gallery in this folder
+* cd gallery
+* Create a MongoDB cloud account at Mlab(https://mlab.com) on Atlas
+* Create a collection in Atlas
+* Create a Heroku account and install the CLI tools
+* Set up Jenkins
+* Create a pipeline in Jenkins
+* Work on the project
+
+## Built with
+* HTML5
+* NodeJS 
+* CSS
+
+## Image Credits
+* [**Natali Panichkina**](https://images.unsplash.com/photo-1564900670759-65a518b337ff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=natali-panichkina-EyAcOBMAiSw-unsplash.jpg)
+
+* [**Tim Johnson**](https://images.unsplash.com/photo-1523525385869-1bb0ba80c97d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=tim-johnson-BMljDPdeigw-unsplash.jpg)
+
+## Author
+Timothy Matara 
+
+## License
+MIT License.
