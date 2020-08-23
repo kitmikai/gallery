@@ -52,7 +52,10 @@ pipeline {
             }
             post {
                 success {
-                    slackSend message: 'Hello World!'
+                    node{
+                        slackSend message: 'Hello World!'
+                    }
+                    
                 }
             }
         }
