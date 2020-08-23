@@ -52,7 +52,10 @@ pipeline {
             }
             post {
                 success {
-                    slackSend message: "Build \'${env.JOB_NAME}:${env.BUILD_NUMBER}\' successfully deployed to Heroku \'${env.APP_URL}\' :beer: :beer:"
+                    slackSend color: "good" message: "Build \'${env.JOB_NAME}:${env.BUILD_NUMBER}\' successfully deployed to Heroku \'${env.APP_URL}\' :beer: :beer:"
+                }
+                failure {
+                    slackSend color: "danger" message: "Build `${env.JOB_NAME}:${env.BUILD_NUMBER}` failed deployment to Heroku `${env.APP_URL}` :face_palm:"
                 }
             }
         }
