@@ -51,7 +51,7 @@ pipeline {
             }
             post {
                 success {
-                    slackSend message: 'Hello World!'
+                    slackSend message: "Deployment successful :parrot: \n'${env.JOB_NAME}:${env.BUILD_NUMBER}\' Site: https://dry-springs-42834.herokuapp.com/"
                 }
             }
         }
