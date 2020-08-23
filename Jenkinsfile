@@ -15,6 +15,7 @@ pipeline {
         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_SUBJECT_TEST_FAILURE = "Status: 'TEST FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_RECEPIENT = 'matara.timothy@gmail.com'
+        APP_URL = 
     }
     tools {
         nodejs 'NodeJS-4'
@@ -47,6 +48,11 @@ pipeline {
             steps {
                 withCredentials([usernameColonPassword(credentialsId: 'Heroku', variable: 'HEROKU_CREDENTIALS')]){
                     sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/dry-springs-42834.git master'
+                }
+            }
+            post {
+                success {
+                    slackSend message: 'Hello World!'
                 }
             }
         }
